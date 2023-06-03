@@ -2,6 +2,7 @@ import os
 import json
 
 
+# Criação da árvore dos diretórios
 def criaDiretorio(caminhoDiretorio):
     arvDiretorio = {
         'nome': os.path.basename(caminhoDiretorio),
@@ -27,6 +28,7 @@ def criaDiretorio(caminhoDiretorio):
 
     return arvDiretorio
 
+# Gerencia a extensão dos arquivos dos diretórios
 def geraTipoArq(dirArq):
     extensaoArq = os.path.splitext(dirArq)[1][1:].lower()
     if extensaoArq in ('mp3', 'wav', 'flac'):
@@ -53,7 +55,7 @@ def main():
     # Cria a árvore de diretório
     arvoreDir = criaDiretorio(caminhoDiretorio)
     
-    # Save the directory tree to a JSON file
+    # Salva o arquivo no arquivo JSON
     salvaDiretorio(arvoreDir, saidaJSON)
     
     print("Diretório criado com sucesso!")
